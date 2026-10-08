@@ -1,0 +1,187 @@
+.medicine-card {
+  display: none;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 14px;
+
+  padding: 15px;
+
+  box-shadow:
+    0 2px 8px rgba(16, 24, 40, 0.03);
+}
+
+.medicine-card-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+}
+
+.medicine-card-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eaf8ef;
+
+  border-radius: 10px;
+
+  flex-shrink: 0;
+}
+
+.medicine-card-title {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.medicine-card-title h3 {
+  color: #344054;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.medicine-card-title p {
+  margin-top: 3px;
+
+  color: #98a2b3;
+
+  font-size: 11px;
+}
+
+.card-status {
+  padding: 5px 7px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.card-status.available {
+  background: #eaf8ef;
+
+  color: #087443;
+}
+
+.card-status.low {
+  background: #fff4e5;
+
+  color: #b54708;
+}
+
+.card-status.expiring {
+  background: #fff4e5;
+
+  color: #b54708;
+}
+
+.card-status.expired {
+  background: #fff0f0;
+
+  color: #b42318;
+}
+
+/* DETAILS */
+
+.medicine-card-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 10px;
+
+  margin-top: 16px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #f0f2f5;
+}
+
+.medicine-card-details div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.medicine-card-details span {
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+.medicine-card-details strong {
+  color: #344054;
+
+  font-size: 12px;
+}
+
+/* ACTIONS */
+
+.medicine-card-actions {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px;
+
+  margin-top: 15px;
+}
+
+.medicine-card-actions button {
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.card-edit {
+  border: 1px solid #bfdbfe;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+.card-delete {
+  border: 1px solid #fecdca;
+
+  background: #fff1f1;
+
+  color: #b42318;
+}
+
+@media (max-width: 700px) {
+  .medicine-card {
+    display: block;
+  }
+}
