@@ -9,6 +9,7 @@ import {
   FiTruck,
   FiShoppingCart,
   FiAlertTriangle,
+  FiBriefcase
 } from "react-icons/fi";
 
 import { useMedicine } from "../context/MedicineContext";
@@ -17,12 +18,13 @@ import "../styles/MedicineForm.css";
 const initialForm = {
   name: "",
   company: "",
+  agencyName: "",
   batch: "",
   expiry: "",
-  purchase: "",
-  sales: "",
-  minimum: "",
-  price: "",
+  purchase: 0,
+  sales: 0,
+  minimum: 0,
+  price: 0,
 };
 
 const MedicineForm = () => {
@@ -236,13 +238,40 @@ const MedicineForm = () => {
                 </div>
               </div>
 
-              {/* Company */}
+
+
+              {/* Agency Name */}
               <div className="form-group">
+                <label htmlFor="agencyName">
+                  Agency Name
+                </label>
+                <div className="input-wrapper">
+                  <FiTruck className="input-icon" />			 <input
+                    id="agencyName"
+                    type="text"
+                    name="agencyName"
+                    value={form.agencyName || ""}
+                    onChange={(event) =>
+                      setForm({
+                        ...form,
+                        agencyName: event.target.value,
+                      })
+                    }
+                    placeholder="Enter agency name"
+                  />
+
+                </div>
+              </div>
+
+
+
+              {/* Company */}
+              <div className="form-group ">
                 <label htmlFor="company">Company</label>
 
                 <div className="input-wrapper">
-                  <FiTruck className="input-icon" />
 
+                  <FiBriefcase className="input-icon" />
                   <input
                     id="company"
                     type="text"
@@ -414,7 +443,7 @@ const MedicineForm = () => {
                 </label>
 
                 <div className="input-wrapper">
-                <span className="rupee-icon">₹</span>
+                  <span className="rupee-icon">₹</span>
 
                   <input
                     id="price"

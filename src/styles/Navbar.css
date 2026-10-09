@@ -210,7 +210,6 @@ background: #eaf8ef;
 
   .mobile-menu {
     display: flex;
-
     flex-direction: column;
 
     gap: 5px;
@@ -413,9 +412,8 @@ background: #eaf8ef;
     display: flex;
 
     margin-top: 8px;
-
-    border: 1px solid #d0d5dd;
-
+   
+    height: 38px;
     border-radius: 9px;
 
     overflow: hidden;

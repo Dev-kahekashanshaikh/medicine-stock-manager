@@ -42,7 +42,7 @@ function StockList() {
     searchParams.get("search") || ""
   );
 
-  const [category, setCategory] =
+  const [agencyName, setAgencyName] =
     useState("All");
 
   const [status, setStatus] =
@@ -83,11 +83,11 @@ function StockList() {
     return "Available";
   };
 
-  const categories = [
+  const agencyNames = [
     "All",
     ...new Set(
       medicines
-        .map((medicine) => medicine.category)
+        .map((medicine) => medicine.agencyName)
         .filter(Boolean)
     ),
   ];
@@ -102,14 +102,14 @@ function StockList() {
         !query ||
         `${medicine.name}
         ${medicine.company}
-        ${medicine.category}
+        ${medicine.agencyName}
         ${medicine.batch}`
           .toLowerCase()
           .includes(query);
 
-      const matchesCategory =
-        category === "All" ||
-        medicine.category === category;
+      const matchesAgencyName =
+        agencyName === "All" ||
+        medicine.agencyName === agencyName;
 
       const matchesStatus =
         status === "All" ||
@@ -118,14 +118,14 @@ function StockList() {
 
       return (
         matchesSearch &&
-        matchesCategory &&
+        matchesAgencyName &&
         matchesStatus
       );
     });
   }, [
     medicines,
     search,
-    category,
+    agencyName,
     status,
   ]);
 
@@ -146,7 +146,7 @@ function StockList() {
   const clearFilters = () => {
     setSearch("");
 
-    setCategory("All");
+    setAgencyName("All");
 
     setStatus("All");
 
@@ -207,7 +207,7 @@ function StockList() {
     const headers = [
       "Medicine Name",
       "Company",
-      "Category",
+      "Agency Name",
       "Batch",
       "Expiry",
       "Purchase Quantity",
@@ -222,7 +222,7 @@ function StockList() {
       (medicine) => [
         medicine.name,
         medicine.company,
-        medicine.category,
+        medicine.agencyName,
         medicine.batch,
         medicine.expiry,
         medicine.purchaseQty,
@@ -277,8 +277,8 @@ function StockList() {
           medicine.company || "-"
         }\n`;
 
-        text += `Category: ${
-          medicine.category || "-"
+        text += `Agency: ${
+          medicine.agencyName || "-"
         }\n`;
 
         text += `Batch: ${
@@ -398,7 +398,7 @@ function StockList() {
 
             <input
               type="text"
-              placeholder="Search by medicine, company, category or batch..."
+              placeholder="Search by medicine, company, agency or batch..."
               value={search}
               onChange={handleSearch}
             />
@@ -440,18 +440,18 @@ function StockList() {
             <div className="filter-group">
 
               <label>
-                Category
+                Agency Name
               </label>
 
               <select
-                value={category}
+                value={agencyName}
                 onChange={(event) =>
-                  setCategory(
+                  setAgencyName(
                     event.target.value
                   )
                 }
               >
-                {categories.map(
+                {agencyNames.map(
                   (item) => (
                     <option
                       key={item}

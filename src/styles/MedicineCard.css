@@ -22,8 +22,12 @@
 }
 
 .medicine-card-icon {
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 30px;
+
+  border: 1px solid #e4e7ec;
+
+  padding: 2.6px;
 
   display: flex;
   align-items: center;
@@ -34,6 +38,7 @@
   border-radius: 10px;
 
   flex-shrink: 0;
+  transform: rotate(30deg);
 }
 
 .medicine-card-title {

@@ -328,7 +328,7 @@ function Dashboard() {
                     <span>
                       {medicine.company ||
                         "No company"}{" "}
-                      • {medicine.category ||
+                      • {medicine.agencyName ||
                         "Other"}
                     </span>
                   </div>

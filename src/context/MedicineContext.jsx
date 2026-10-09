@@ -97,6 +97,10 @@ export const MedicineProvider = ({ children }) => {
       data?.company ?? ""
     ).trim();
 
+    const agencyName = String(
+      data?.agencyName ?? ""
+    ).trim();
+
     const batch = String(
       data?.batch ?? ""
     ).trim();
@@ -205,6 +209,7 @@ export const MedicineProvider = ({ children }) => {
 
       name,
       company,
+      agencyName, // Added
       batch,
       expiry,
 
@@ -257,6 +262,10 @@ export const MedicineProvider = ({ children }) => {
 
     const company = String(
       data?.company ?? ""
+    ).trim();
+
+    const agencyName = String(
+      data?.agencyName ?? ""
     ).trim();
 
     const batch = String(
@@ -380,6 +389,7 @@ export const MedicineProvider = ({ children }) => {
 
           name,
           company,
+          agencyName, // Added
           batch,
           expiry,
 
@@ -394,8 +404,8 @@ export const MedicineProvider = ({ children }) => {
             Number(
               currentMedicine.stock || 0
             ) +
-              purchase -
-              sales
+            purchase -
+            sales
           ),
         };
       })
@@ -511,7 +521,7 @@ export const MedicineProvider = ({ children }) => {
 
       const difference = Math.ceil(
         (expiryDate - today) /
-          (1000 * 60 * 60 * 24)
+        (1000 * 60 * 60 * 24)
       );
 
       return (

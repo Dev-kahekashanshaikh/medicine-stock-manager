@@ -395,6 +395,10 @@
     width: 100%;
   }
 
+   .stock-search{
+padding: 20px;
+   
+  }
   .stock-actions {
     flex-direction: column;
 
@@ -451,4 +455,6 @@
 
     border-radius: 14px;
   }
+
+ 
 }

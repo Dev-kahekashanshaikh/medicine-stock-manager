@@ -76,7 +76,7 @@ function MedicineTable({
           <tr>
             <th>Medicine</th>
             <th>Company</th>
-            <th>Category</th>
+            <th>Agency Name</th>
             <th>Batch</th>
             <th>Expiry</th>
             <th>Stock</th>
@@ -106,7 +106,7 @@ function MedicineTable({
                 </td>
 
                 <td>
-                  {medicine.category || "-"}
+                  {medicine.agencyName || "-"}
                 </td>
 
                 <td>

@@ -85,9 +85,9 @@ function MedicineCard({
       <div className="medicine-card-details">
 
         <div>
-          <span>Category</span>
+          <span>AgencyName</span>
           <strong>
-            {medicine.category || "-"}
+            {medicine.agencyName || "-"}
           </strong>
         </div>
 
